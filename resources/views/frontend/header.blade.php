@@ -20,7 +20,7 @@
          <link rel="stylesheet" href="{{url('public/frontend/assets/vendors/bootstrap/css/bootstrap.min.css') }}">
          <link rel="stylesheet" href="{{asset('public/frontend/assets/vendors/animate/animate.min.css') }}">
          <link rel="stylesheet" href="{{asset('public/frontend/assets/vendors/animate/custom-animate.css') }}">
-         <link rel="stylesheet" href="{{asset('public/fronend/assets/vendors/fontawesome/css/all.min.css') }}">
+         <link rel="stylesheet" href="{{asset('public/frontend/assets/vendors/fontawesome/css/all.min.css') }}">
          <link rel="stylesheet" href="{{asset('public/frontend/assets/vendors/jarallax/jarallax.css') }}">
          <link rel="stylesheet" href="{{asset('public/frontend/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css') }}">
          <link rel="stylesheet" href="{{asset('public/frontend/assets/vendors/nouislider/nouislider.min.css') }}">
@@ -50,8 +50,11 @@
       position: absolute;
     left: 545px;
    }
-   .dropdowncategory ::hover {
-      display: none;
+   .newClassName {
+      display: none !important;
+   }
+   .myvis{
+      visibility: visible !important;
    }
    
    </style>
@@ -111,16 +114,14 @@
                                        <li>
                                           <a href="{{url('/home')}}">Home </a>
                                        </li>
-                                       <li>
+                                       <li> 
                                           <a href="{{url('/aboutus')}}">About Us</a>
                                        </li>
                                        <li class="dropdowncategory">
                                           <a href="#">Our Products</a>
-                                          <ul class="sub-menu" id="loadcategory">
-                                             
-                                          </ul>
-                                          <ul class="sub-menu" id="loadsubcategory"></ul>
-                                          <ul class="sub-menu" id="loadproduct"></ul>
+                                          <ul class="sub-menu" id="loadcategory"></ul>
+                                          <ul class="sub-menu newClassName" id="loadsubcategory"></ul>
+                                          <ul class="sub-menu newClassName" id="loadproduct"></ul>
                                        <li>
                                           <a href="{{url('/certification')}}">Certifications</a>
                                        </li>

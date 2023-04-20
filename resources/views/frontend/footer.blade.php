@@ -212,8 +212,8 @@ Brown Rice</a>
 <<script>
 
 $(".dropdowncategory").click(function(){
-   var loadcategory = document.getElementById('loadproduct');
-   
+   document.getElementById('loadcategory').className = 'myvis';
+  //myvis
                   $.ajax({
                          type: 'POST',
                         url: "{{url('/api/menugetcategory')}}",
@@ -239,6 +239,7 @@ $(".dropdowncategory").click(function(){
 });
 
 function subcategory(data){
+   document.getElementById('loadsubcategory').className = 'myvis';
  var subId=data;
    $.ajax({
                          type: 'POST',
@@ -247,7 +248,7 @@ function subcategory(data){
                         success: function(result) {
                            
                           var loadcategory = document.getElementById('loadsubcategory');
-
+                          document.getElementById('loadproduct').className = 'newClassName';
                      
                         var tr = '';
                         for(var i in result.record){
@@ -262,18 +263,18 @@ function subcategory(data){
                     });
 }
 function productget(data){
+   document.getElementById('loadproduct').className = 'myvis';
    var subId=data;
    $.ajax({
                          type: 'POST',
                         url: "{{url('/api/menugetproduct')}}",
                         data:{id:subId},
                         success: function(result) {
-                           
+                        
                           var loadcategory = document.getElementById('loadproduct');
-
-                     
                         var tr = '';
                         for(var i in result.record){
+                          
                           tr += `
                                   <li class="dropdown"><a href="{{url('/menugetproductLoad/')}}?pid=${result.record[i].id}"> ${result.record[i].name}</a> </li>
                                 `;
