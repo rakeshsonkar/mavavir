@@ -38,7 +38,7 @@ class ProductController extends Controller
     {	
         $v = Validator::make($request->all(), [
 											'name' 			 	=> 'required',
-											'meta_description'	=> 'required',
+											//'meta_description'	=> 'required',
 											'meta_keywords' 	=> 'required',
 											'image'			 	=> 'required',
 											]);
@@ -67,8 +67,8 @@ class ProductController extends Controller
 				}
                 $product                 	= new \App\Models\Product();
 				$product->name 		  		= $request['name'];
-                $product->meta_title 		= $request['meta_title'];
-				$product->meta_description 	= $request['meta_description'];
+               // $product->meta_title 		= $request['meta_title'];
+				$product->meta_description 	= $request['meta_title'];
 				$product->meta_keywords 	= $request['meta_keywords'];
 				$product->description 		= $request['description'];
 				$product->status 	      	= $request['status'];		
